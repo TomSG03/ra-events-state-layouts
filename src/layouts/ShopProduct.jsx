@@ -1,6 +1,10 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export function ShopCard({ item }) {
+  if (item === {}) {
+    return null
+  }
   return (
     <div className="shop-card">
       <div className="item-img"><img src={item.img} alt="item.name" /></div>
@@ -16,7 +20,14 @@ export function ShopCard({ item }) {
   )
 }
 
+ShopCard.propTypes = {
+  item: PropTypes.object
+}
+
 export function ShopItem({ item }) {
+  if (item === {}) {
+    return null
+  }
   return (
     <div className="shop-item">
       <div className="item-img"><img src={item.img} alt="item.name" /></div>
@@ -26,5 +37,9 @@ export function ShopItem({ item }) {
       <button className="add-btn">add to card</button>
     </div>
   )
+}
+
+ShopItem.propTypes = {
+  item: PropTypes.object
 }
 

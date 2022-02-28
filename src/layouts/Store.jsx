@@ -15,10 +15,7 @@ function Store() {
   return (
     <div className="main">
       <IconSwitch icons={icons} onSwitch={onSwitch} />
-      <div className="gallery">
-        {icons === 'view_list' ? <CardsView cards={products} /> : <ListView items={products} />}
-      </div>
-
+      {icons === 'view_list' ? <CardsView cards={products} /> : <ListView items={products} />}
     </div>
   )
 }
